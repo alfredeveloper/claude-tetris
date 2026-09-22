@@ -31,7 +31,12 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # Permite procesar issues de gente sin permiso de escritura en el repo
           allowed_non_write_users: '*'
-          prompt: '/triage-issue REPO: ${{ github.repository }} ISSUE_NUMBER: ${{ github.event.issue.number }}'
+          prompt: >-
+            /triage-issue REPO: ${{ github.repository }} ISSUE_NUMBER: ${{ github.event.issue.number }}
+            El comentario que publiques en el issue debe estar escrito en formato Markdown
+            compatible con GitHub (GitHub Flavored Markdown): usa encabezados, listas,
+            bloques de código con su lenguaje, tablas y enlaces para que GitHub lo renderice
+            correctamente.
           claude_args: >-
             --max-turns 20
             --allowedTools "Read,Glob,Grep,Write,Bash(gh issue view:*),Bash(gh issue list:*),Bash(gh label list:*),Bash(gh issue edit:*),Bash(gh issue comment:*),Bash(gh api:*)"
