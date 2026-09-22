@@ -27,3 +27,5 @@ Key conventions that span functions:
 - **Game loop**: `loop()` runs on `requestAnimationFrame`, accumulating `dropAccum` until `dropInterval`. Pausing and game over cancel the frame via `animId`; resuming resets `lastTime` so the elapsed pause isn't counted as a drop.
 - **Piece lifecycle**: `lockPiece()` → `merge()` → `clearLines()` (updates lines/score/level/`dropInterval`) → `spawn()`, which promotes `next` to `current` and calls `endGame()` if the new piece collides immediately.
 - **Canvas size is hard-coded in `index.html`** (`300×600` board = `COLS×BLOCK` by `ROWS×BLOCK`; `120×120` preview drawn at 30px for a 4×4 area). Changing `COLS`, `ROWS`, or `BLOCK` requires updating the canvas attributes to match.
+
+## cambios
